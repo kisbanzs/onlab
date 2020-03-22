@@ -1,24 +1,13 @@
 package aut.bme.ToDoApp.Models;
 
-import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.HashSet;
-import java.util.Set;
 import java.time.Instant;
 
 
 @Entity
-@Table(name = "todo", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {
-                "description"
-        }),
-        @UniqueConstraint(columnNames = {
-                "date"
-        })
-})
+@Table(name = "todo")
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -69,6 +58,13 @@ public class Todo {
         this.date = date;
     }
 
+    public void setUser(User userr) {
+        this.user = userr;
+    }
+
+    public User getUser() {
+        return user;
+    }
 
 
 }
