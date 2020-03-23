@@ -17,7 +17,7 @@ ReactDOM.render(
       <Header />
 
       <Switch>
-        <Route exact path="/ ">
+        <Route exact path="/">
           <App />
         </Route>
         <Route path="/currentlists">

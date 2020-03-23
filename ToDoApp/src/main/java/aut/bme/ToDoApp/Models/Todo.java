@@ -7,7 +7,7 @@ import java.time.Instant;
 
 
 @Entity
-@Table(name = "todo")
+@Table(name = "todos")
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class Todo {
     @Size(max = 150)
     private String description;
 
-    @NotBlank
+
     private Instant date;
 
     //minden todo pontosan egy userhez tartozik
@@ -65,6 +65,4 @@ public class Todo {
     public User getUser() {
         return user;
     }
-
-
 }
